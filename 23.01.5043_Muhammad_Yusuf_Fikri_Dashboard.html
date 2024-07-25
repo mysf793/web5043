@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosen Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header-background, .footer-background {
+            background-color: #6A0DAD;
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+        .main-content {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.15);
+            padding: 40px;
+            margin-top: 50px;
+        }
+        .footer-background {
+            padding: 10px;
+        }
+        body {
+            background-color: #6A0DAD;
+        }
+        .amikom-logo {
+            width: 100px;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .btn-primary {
+            background-color: #6A0DAD;
+            border-color: #6A0DAD;
+            font-size: 18px;
+            padding: 15px 20px;
+        }
+        .btn-primary:hover {
+            background-color: #4B0082;
+            border-color: #4B0082;
+        }
+        .sidebar {
+            background-color: #6A0DAD;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+        .sidebar-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .sidebar-item {
+            margin-bottom: 10px;
+        }
+        .data-column {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .schedule-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+        .dosen-icon {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid header-background text-center">
+    <img src="https://www.amikomsolo.ac.id/wp-content/uploads/2020/01/logo-amikom-surakarta-1.png" alt="Amikom Logo" class="amikom-logo">
+    <h1>UNIVERSITAS AMIKOM YOGYAKARTA</h1>
+    <p>Jl. Ring Road Utara, Condong Catur, Sleman, Yogyakarta 55283</p>
+    <p>Telp: +62 0274 884 201 | Website: www.amikom.ac.id | Email: amikom@amikom.ac.id</p>
+</div>
+
+<div class="container main-content">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sidebar">
+                <h2 class="sidebar-heading">Dashboard</h2>
+                <button class="btn btn-primary btn-block mb-3">Data Mahasiswa</button>
+                <button class="btn btn-primary btn-block mt-auto">Tambah Data Nilai</button>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <h2 class="schedule-heading">Jadwal Mata Kuliah</h2>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <button class="btn btn-primary btn-block">Pemrograman Web (7.4.2) - 07:00 - 09:00 - Ruang 7.4.2</button>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <button class="btn btn-primary btn-block">Algoritma (5.2.3) - 10:00 - 12:00 - Ruang 5.2.3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

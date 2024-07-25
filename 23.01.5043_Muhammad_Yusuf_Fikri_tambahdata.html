@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Rekapitulasi Nilai</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header-background, .footer-background {
+            background-color: #6A0DAD;
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+        .main-content {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.15);
+            padding: 40px;
+            margin-top: 50px;
+        }
+        .footer-background {
+            padding: 10px;
+        }
+        body {
+            background-color: #6A0DAD;
+        }
+        .amikom-logo {
+            width: 100px;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .form-login {
+            background-color: #f8f9fa;
+        }
+        .btn-primary {
+            background-color: #6A0DAD;
+            border-color: #6A0DAD;
+        }
+        .btn-primary:hover {
+            background-color: #4B0082;
+            border-color: #4B0082;
+        }
+        .dashboard-content {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.15);
+            padding: 40px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid header-background text-center">
+    <img src="https://www.amikomsolo.ac.id/wp-content/uploads/2020/01/logo-amikom-surakarta-1.png" alt="Amikom Logo" class="amikom-logo">
+    <h1>UNIVERSITAS AMIKOM YOGYAKARTA</h1>
+    <p>Jl. Ring Road Utara, Condong Catur, Sleman, Yogyakarta 55283</p>
+    <p>Telp: +62 0274 884 201 | Website: www.amikom.ac.id | Email: amikom@amikom.ac.id</p>
+</div>
+
+<div class="container main-content col-md-8">
+    <h2 class="text-center">Tambah Data Nilai</h2>
+    <div class="dashboard-content">
+        <!-- Form to add new student and grade -->
+        <form id="addForm">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="nama">Nama Mahasiswa</label>
+                    <input type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="kehadiran">Kehadiran</label>
+                    <input type="number" class="form-control" id="kehadiran" placeholder="Kehadiran">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="uts">UTS</label>
+                    <input type="number" class="form-control" id="uts" placeholder="UTS">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="uas">UAS</label>
+                    <input type="number" class="form-control" id="uas" placeholder="UAS">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="tugas">Tugas</label>
+                    <input type="number" class="form-control" id="tugas" placeholder="Tugas">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Tambah</button>
+        </form>
+        <hr>
+        <!-- Table to display student and grade -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama Mahasiswa</th>
+                    <th scope="col">Kehadiran</th>
+                    <th scope="col">UTS</th>
+                    <th scope="col">UAS</th>
+                    <th scope="col">Tugas</th>
+                    <th scope="col">Nilai Akhir</th>
+                </tr>
+            </thead>
+            <tbody id="nilaiTable">
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="container-fluid footer-background text-center fixed-bottom">
+    <p>VERSION 1.00 | 23.01.5043</p>
+</footer>
+
+<script>
+    document.getElementById("addForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var nama = document.getElementById("nama").value;
+        var kehadiran = document.getElementById("kehadiran").value;
+        var uts = document.getElementById("uts").value;
+        var uas = document.getElementById("uas").value;
+        var tugas = document.getElementById("tugas").value;
+        var nilaiAkhir = (parseFloat(kehadiran) + parseFloat(uts) + parseFloat(uas) + parseFloat(tugas)) / 4;
+        var table = document.getElementById("nilaiTable");
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        cell1.innerHTML = rowCount;
+        cell2.innerHTML = nama;
+        cell3.innerHTML = kehadiran;
+        cell4.innerHTML = uts;
+        cell5.innerHTML = uas;
+        cell6.innerHTML = tugas;
+        cell7.innerHTML = nilaiAkhir.toFixed(2); // Round nilai akhir to 2 decimal places
+    });
+</script>
+
+</body>
+</html>
